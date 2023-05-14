@@ -1,16 +1,32 @@
-import React from 'react';
-import './App.css';
-import Header from './Header';
-import AddContact from './AddContacts';
-import ContactCard from './ContactCard';
-import ContactList from './ContactList';
+import React from "react";
+import "./App.css";
+import Header from "./Header";
+import AddContacts from "./AddContacts";
+import ContactList from "./ContactList";
+// import ContactCard from './ContactCard';
 
 function App() {
+
+  const contacts = [
+    {
+      id: "1",
+      name: "Indra",
+      email: "aritra1999.dey@gmail.com",
+    },
+    {
+      id: "2",
+      name: "Ridhi",
+      email: "aritracst.1999.dey@gmail.com",
+    }
+  ]
   return (
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id beatae iste consequatur nemo cupiditate? Culpa ex ad itaque, totam ullam recusandae iste cum numquam! Maiores, itaque magni nemo voluptate labore vel quibusdam nostrum! A corrupti aperiam expedita nostrum sed officia pariatur perferendis quibusdam minima tenetur.
+    <div className="ui container">
+      <Header />
+      <AddContacts />
+      <ContactList contacts={contacts} />
+      {/* <ContactCard /> */}
     </div>
-  )
+  );
 }
 
 export default App;
