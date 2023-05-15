@@ -18,7 +18,7 @@ function App() {
       name: "Ridhi",
       email: "aritracst.1999.dey@gmail.com",
     }
-  ]
+  ]; 
   return (
     <div className="ui container">
       <Header />
