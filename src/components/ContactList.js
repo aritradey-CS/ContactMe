@@ -9,6 +9,8 @@ const ContactList = (props) => {
     });
   
     return <div className="ui celled list">{renderContactList}</div>;
+
+    
 };
 
 export default ContactList;
