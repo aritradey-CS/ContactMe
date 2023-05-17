@@ -1,38 +1,46 @@
 import React, { Component } from "react";
 
 export class AddContacts extends Component {
-state = {
-  name: "",
-  email: ""
-};
+  state = {
+    name: "",
+    email: "",
+  };
 
-add = (e) => {
-  e.preventDefault();
-  if(this.state.name === "" && this.state.email === "") {
-    alert("ALL the fields are mandatory!");
-    return;
-  }
-  this.props.addContactHandler(this.state);
-  this.setState({ name: "", email: ""});
-  }
+  add = (e) => {
+    e.preventDefault();
+    if (this.state.name === "" && this.state.email === "") {
+      alert("All the fields are mandatory!");
+      return;
+    }
+    this.props.addContactHandler(this.state);
+    this.setState({ name: "", email: "" });
+  };
 
-
-render() {
+  render() {
     return (
       <div className="ui main">
-        <h2 className="Title">Add Contact</h2>
+        <h2>Add Contact</h2>
         <form className="ui form" onSubmit={this.add}>
           <div className="field">
             <label htmlFor="">Name</label>
-            <input type="text" name="name" placeholder="Name" 
-            value={this.state.name}
-            onChange={ (e) => this.setState({name: e.target.value})} />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={this.state.name}
+              onChange={(e) => this.setState({ name: e.target.value })}
+            />
           </div>
 
           <div className="field">
-            <label htmlFor="">Email</label>
-            <input type="text" name="email" placeholder="Email" value={this.state.email}
-            onChange={ (e) => this.setState({email: e.target.value})} />
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={(e) => this.setState({ email: e.target.value })}
+            />
           </div>
           <button className="ui button blue">Add</button>
         </form>
