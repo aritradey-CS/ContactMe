@@ -14,36 +14,48 @@ export class AddContacts extends Component {
     }
     this.props.addContactHandler(this.state);
     this.setState({ name: "", email: "" });
+    // this.props.history.push("/");
   };
 
   render() {
     return (
-      <div className="ui main">
-        <h2>Add Contact</h2>
-        <form className="ui form" onSubmit={this.add}>
-          <div className="field">
-            <label htmlFor="">Name</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              value={this.state.name}
-              onChange={(e) => this.setState({ name: e.target.value })}
-            />
-          </div>
+      <div className="card" style={{ width: "18rem" }}>
+        <div className="card-body">
+          <h5 className="card-title">
+            <h3>Add Contact</h3>
+          </h5>
 
-          <div className="field">
-            <label>Email</label>
-            <input
-              type="text"
-              name="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.target.value })}
-            />
+          <p className="card-text">
+            <form className="ui form" onSubmit={this.add}>
+              <div className="field">
+                <label htmlFor="">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  value={this.state.name}
+                  onChange={(e) => this.setState({ name: e.target.value })}
+                />
+              </div>
+
+              <div className="field">
+                <label>Email</label>
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="Email"
+                  value={this.state.email}
+                  onChange={(e) => this.setState({ email: e.target.value })}
+                />
+              </div>
+            </form>
+          </p>
+
+          <div className="card-link">
+            <button className="btn btn-outline-success">Add</button>
           </div>
-          <button className="ui button blue">Add</button>
-        </form>
+          {/* <a href="#" class="card-link">Another link</a> */}
+        </div>
       </div>
     );
   }

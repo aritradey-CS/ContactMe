@@ -37,7 +37,7 @@
   }
 }
 
-/* .Title{
-  text-decoration: dotted !important;
-  color: blue !important;
-} */
+.Title {
+  color: blue;
+  text-align: center;
+}
