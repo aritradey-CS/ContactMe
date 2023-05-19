@@ -41,3 +41,8 @@
   color: blue;
   text-align: center;
 }
+
+.card{
+  width: 50rem !important;
+  background-color: blue !important;
+}

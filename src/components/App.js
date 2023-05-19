@@ -35,7 +35,25 @@ function App() {
 
   return (
     <div className="ui container">
+      {/* <Header />
+      <AddContacts addContactHandler={addContactHandler} />
+      <ContactList contacts={contacts} getContactID={removeContactHandler} /> */}
+{/* ---------------------------------------------------------------
+              old code, but currently not working
+      --------------------------------------------------------------- */}
+
       <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" exact Component={ContactList} />
+          <Route path="/add" exact Component={AddContacts} />
+        </Routes>
+      </BrowserRouter>
+{/* ---------------------------------------------------------------
+  old code after adding "Routes" Above code working but not importent now
+--------------------------------------------------------------- */}
+
+      {/* <BrowserRouter>
       <Header />
         <Routes>
           <Route path="/" exact render={(props) => (
@@ -44,7 +62,10 @@ function App() {
           <Route path="/add"  render={(props) => (  <AddContacts {...props} addContactHandler={addContactHandler} />  )}
           />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+{/* ---------------------------------------------------------------
+        Above code not working but it must run to get to apply future program
+--------------------------------------------------------------- */}
     </div>
   );
 }
