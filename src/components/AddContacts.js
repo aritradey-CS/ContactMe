@@ -52,7 +52,7 @@ export class AddContacts extends Component {
           </p>
 
           <div className="card-link">
-            <button className="btn btn-outline-success">Add</button>
+            <button className="btn btn-success">Add</button>
           </div>
           {/* <a href="#" class="card-link">Another link</a> */}
         </div>

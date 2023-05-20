@@ -8,14 +8,14 @@ const ContactList = (props) => {
   const deleteContacthandler = (id) => {
     props.getContactId(id);
   };
-const contacts =[
-  {
-    id: "1",
-    name: "Redhiman",
-    email: "aritra1231@gmail.com",
-  },
-];
-  
+  const contacts = [
+    {
+      id: "1",
+      name: "Redhiman",
+      email: "aritra1231@gmail.com",
+    },
+  ];
+
   const renderContactList = contacts.map((contact) => {
     return (
       <ContactCard
@@ -32,7 +32,7 @@ const contacts =[
         <h3>
           Contact List
           <Link to="/add">
-            <button className="btn btn-outline-success">Add Contacts</button>
+            <button className="btn btn-primary">Add Contacts</button>
           </Link>
         </h3>
       </div>

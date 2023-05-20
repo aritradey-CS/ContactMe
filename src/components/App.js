@@ -37,8 +37,8 @@ function App() {
     <div className="ui container">
       {/* <Header />
       <AddContacts addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactID={removeContactHandler} /> */}
-{/* ---------------------------------------------------------------
+    <ContactList contacts={contacts} getContactID={removeContactHandler} />*/}
+      {/* ---------------------------------------------------------------
               old code, but currently not working
       --------------------------------------------------------------- */}
 
@@ -49,7 +49,7 @@ function App() {
           <Route path="/add" exact Component={AddContacts} />
         </Routes>
       </BrowserRouter>
-{/* ---------------------------------------------------------------
+      {/* ---------------------------------------------------------------
   old code after adding "Routes" Above code working but not importent now
 --------------------------------------------------------------- */}
 
@@ -63,7 +63,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter> */}
-{/* ---------------------------------------------------------------
+      {/* ---------------------------------------------------------------
         Above code not working but it must run to get to apply future program
 --------------------------------------------------------------- */}
     </div>
