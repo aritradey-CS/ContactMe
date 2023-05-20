@@ -1,64 +1,62 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export class AddContacts extends Component {
-  state = {
-    name: "",
-    email: "",
-  };
+const AddContacts = ({ addContactHandler }) => {
+  const [state, setState] = useState({ name: '', email: '' })
+  const navigate = useNavigate()
 
-  add = (e) => {
+  const add = (e) => {
+    console.log(state)
     e.preventDefault();
-    if (this.state.name === "" && this.state.email === "") {
+    if (state.name === "" && state.email === "") {
       alert("All the fields are mandatory!");
       return;
     }
-    this.props.addContactHandler(this.state);
-    this.setState({ name: "", email: "" });
-    // this.props.history.push("/");
+    addContactHandler(state);
+    setState({ name: "", email: "" });
+    navigate("/");
   };
 
-  render() {
-    return (
-      <div className="card" style={{ width: "18rem" }}>
-        <div className="card-body">
-          <h5 className="card-title">
-            <h3>Add Contact</h3>
-          </h5>
+  return (
+    <div className="card" style={{ width: "18rem" }}>
+      <div className="card-body">
+        <h5 className="card-title">
+          Add Contact
+        </h5>
 
-          <p className="card-text">
-            <form className="ui form" onSubmit={this.add}>
-              <div className="field">
-                <label htmlFor="">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={this.state.name}
-                  onChange={(e) => this.setState({ name: e.target.value })}
-                />
-              </div>
+        <div className="card-text">
+          <form className="ui form" onSubmit={add}>
+            <div className="field">
+              <label htmlFor="">Name</label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={state.name}
+                onChange={(e) => setState((prev) => ({ ...prev, name: e.target.value }))}
+              />
+            </div>
 
-              <div className="field">
-                <label>Email</label>
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Email"
-                  value={this.state.email}
-                  onChange={(e) => this.setState({ email: e.target.value })}
-                />
-              </div>
-            </form>
-          </p>
+            <div className="field">
+              <label>Email</label>
+              <input
+                type="text"
+                name="email"
+                placeholder="Email"
+                value={state.email}
+                onChange={(e) => setState((prev) => ({ ...prev, email: e.target.value }))}
+              />
+            </div>
 
-          <div className="card-link">
-            <button className="btn btn-success">Add</button>
-          </div>
-          {/* <a href="#" class="card-link">Another link</a> */}
+            <div className="card-link">
+              <button className="btn btn-success mt-2" type="submit">Add</button>
+            </div>
+          </form>
         </div>
+        {/* <a href="#" class="card-link">Another link</a> */}
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default AddContacts;
+export default AddContacts
